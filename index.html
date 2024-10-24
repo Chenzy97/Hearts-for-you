@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heart Design</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .heart-row {
+      font-size: 30px;
+      line-height: 40px;
+    }
+
+    .blue-heart {
+      color: blue;
+    }
+
+    .heart {
+      color: red;
+    }
+
+    /* Style to create the V shape in the center using blue hearts */
+    .v-shape {
+      display: inline-block;
+      position: relative;
+      font-size: 30px;
+      line-height: 35px;
+    }
+
+    .v-shape span {
+      display: block;
+      position: relative;
+      top: 0;
+    }
+
+    .v-shape span:nth-child(1) {
+      margin-left: 20px;
+    }
+
+    .v-shape span:nth-child(2) {
+      margin-left: 10px;
+    }
+
+    .v-shape span:nth-child(3) {
+      margin-left: 0;
+    }
+
+    .v-shape span:nth-child(4) {
+      margin-left: 10px;
+    }
+
+    .v-shape span:nth-child(5) {
+      margin-left: 20px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Heart rows as text -->
+  <div class="heart-row">
+    ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
+  </div>
+
+  <!-- Blue hearts forming a 'V' -->
+  <div class="v-shape">
+    <span class="blue-heart">💙</span>
+    <span class="blue-heart">💙💙</span>
+    <span class="blue-heart">💙💙💙</span>
+    <span class="blue-heart">💙💙</span>
+    <span class="blue-heart">💙</span>
+  </div>
+
+  <!-- Heart rows as text -->
+  <div class="heart-row">
+    ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
+  </div>
+
+</body>
+
+</html>
