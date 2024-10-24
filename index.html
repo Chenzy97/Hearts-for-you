@@ -4,7 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Heart Design</title>
+  <title>Vee Heart Word Cloud</title>
+
+  <!-- Include WordCloud.js Library -->
+  <script src="https://cdn.jsdelivr.net/npm/wordcloud@1.2.2/src/wordcloud.min.js"></script>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,51 +16,11 @@
       margin-top: 50px;
     }
 
-    .heart-row {
-      font-size: 30px;
-      line-height: 40px;
-    }
-
-    .blue-heart {
-      color: blue;
-    }
-
-    .heart {
-      color: red;
-    }
-
-    /* Style to create the V shape in the center using blue hearts */
-    .v-shape {
-      display: inline-block;
-      position: relative;
-      font-size: 30px;
-      line-height: 35px;
-    }
-
-    .v-shape span {
-      display: block;
-      position: relative;
-      top: 0;
-    }
-
-    .v-shape span:nth-child(1) {
-      margin-left: 20px;
-    }
-
-    .v-shape span:nth-child(2) {
-      margin-left: 10px;
-    }
-
-    .v-shape span:nth-child(3) {
-      margin-left: 0;
-    }
-
-    .v-shape span:nth-child(4) {
-      margin-left: 10px;
-    }
-
-    .v-shape span:nth-child(5) {
-      margin-left: 20px;
+    #word-cloud {
+      width: 500px;
+      height: 500px;
+      margin: 0 auto;
+      border: 1px solid lightgray;
     }
 
   </style>
@@ -64,24 +28,30 @@
 
 <body>
 
-  <!-- Heart rows as text -->
-  <div class="heart-row">
-    ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
-  </div>
+  <h2>Heart Shape with "Vee"</h2>
+  <!-- Canvas to hold the word cloud -->
+  <canvas id="word-cloud"></canvas>
 
-  <!-- Blue hearts forming a 'V' -->
-  <div class="v-shape">
-    <span class="blue-heart">💙</span>
-    <span class="blue-heart">💙💙</span>
-    <span class="blue-heart">💙💙💙</span>
-    <span class="blue-heart">💙💙</span>
-    <span class="blue-heart">💙</span>
-  </div>
+  <script>
+    // Define the words, using "Vee" multiple times
+    const wordArray = [
+      ['Vee', 20], ['Vee', 18], ['Vee', 16], ['Vee', 14],
+      ['Vee', 12], ['Vee', 10], ['Vee', 9], ['Vee', 8],
+      ['Vee', 7], ['Vee', 6], ['Vee', 5], ['Vee', 4],
+      ['Vee', 3], ['Vee', 2]
+    ];
 
-  <!-- Heart rows as text -->
-  <div class="heart-row">
-    ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
-  </div>
+    // Generate the word cloud in a heart shape
+    WordCloud(document.getElementById('word-cloud'), {
+      list: wordArray,
+      gridSize: 10,
+      weightFactor: 15, // Adjust size factor of the words
+      color: 'random-light', // Lighter colors
+      rotateRatio: 0, // Prevent rotation of words
+      backgroundColor: '#fff',
+      shape: 'heart' // Heart shape
+    });
+  </script>
 
 </body>
 
